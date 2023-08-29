@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Cargat React -  importamos las librerias para poder hacer uso de react dentro de un archivo html puro -->
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<title>ReactApp</title>
+</head>
+<body>
+
+	<!-- indicamos en donde se inyectara el contenido -->
+	<div id="root"></div>
+
+	<!-- agregamos un tag scrip para poder escribir codigo js -->
+	<script type="text/babel"> // se agrega el tipo de texto que se usara, y dejara de marcar error
+
+		// se puede pasar informacion por medio de variables
+		const nombre = 'Chanchito';
+
+		// si solo lo dejamos asi no dara un error por que no sabe que realizar con esta sintaxis
+		// este es el contenido que se inyectara en el html
+		const h1Tag = <h1>Hola, soy un { nombre }</h1>; // por medio de las llaves {} podemos poner variables
+
+		// obtenemos la referencia del div en donde se inyectara el contenido
+		const divRoot = document.querySelector('#root');
+
+		// se inyecta el contenido -> contenido , lugar
+		ReactDOM.render(h1Tag, divRoot)
+
+	</script>
+</body>
+</html>
